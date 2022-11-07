@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div style=" width: 100%; height: 700px;">
+
+    
+        <div class="left" style="width:50%; height: 500px; float:left;">   
+            <p style="color: grey; padding-left: 0px;">Login view 1
+                <br>
+            <img src="view1.jpg" alt="View"  height="100%" width="50%" >
+            </p>    
+        </div>  
+    
+        <div class="right" style="width:50%; height: 500px; float:left; background-color: white; " >
+            <form style="padding-left: 200px;" name="myForm" action="Process.html" method="get" onsubmit="return validate()">
+                <p style="color:grey;  padding-top: 150px; ">Welcome back</p>
+                
+                <h2 style="font-family:sans-serif">Login to your account</h2>
+                <br>
+                <div >
+                <label for="" style="color: grey;">Email</label><br>
+                <input type="text" name="email" id="email" value="" placeholder="John.snow@gmail.com" style="height: 30px; width:300px; padding: 6px 6px; ">
+                &nbsp; <br><br>
+                <label for="" style="color: grey; ">Password</label><br>
+                <input type="password" name="password" id="password" placeholder="******" value="" style="height: 30px; width:300px; padding: 6px 6px; " >
+               </div>
+                <br>
+                <br>
+                <input type="radio" name="" id="" >
+                <label style="color: grey;">Remember me?</label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label style="color:cornflowerblue;">Forgot Password?</label><br><br>
+                <input type="submit" value="Login now" ><br>
+                <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" value="Or sign-in with google" >
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Or sign-in with google</a><br>
+                <br>
+                <h3 id="hrlogin"></h3>
+                <p class="message">Do you have an account?
+                    <a href="#" type="link">Join free today</a>
+                </p>
+                <br>
+                <span id="inValid" style="text-align: center;"></span>
+
+            </form>
+
+        </div>
+    </div>
+    <script>
+        function validate(){
+           var a = document.myForm.email.value;
+           var b =document.myForm.password.value;
+           if(a.indexOf('@')<=0){
+            document.getElementById("inValid").innerHTML="***Invalid Email***";
+            document.getElementById("inValid").style.color="red" ;
+            return false;
+           }
+           if(a =='sankey901@solution.com' && b =='mindset'){
+            return true;
+           }
+           if(a !='sankey901@solution.com'){
+            document.getElementById("inValid").innerHTML="***Invalid Email***";
+            document.getElementById("inValid").style.color="red" ;
+            return false;
+           }
+           if(a !='sankey901@solution.com' && b !='mindset'){
+            document.getElementById("inValid").innerHTML="***Invalid Email Or Password***";
+            document.getElementById("inValid").style.color="red" ;
+            return false;
+           }
+           if(b =='mindset'){
+            return true;
+           }
+           if(b !='mindset'){
+            document.getElementById("inValid").innerHTML="***Invalid Password***";
+            document.getElementById("inValid").style.color="red";
+            return false;
+           }
+        }
+
+    </script>
+</body>
+
+</html> 
